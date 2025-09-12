@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BRS Net Center — Online Applications & Services</title>
+  <meta name="description" content="BRS Net Center: Fast help for PAN, Passport, Job applications, Exam forms, Scans & Prints. Chat on WhatsApp, call, or get directions." />
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='100%25' height='100%25' rx='12' ry='12' fill='%234f46e5'/%3E%3Ctext x='50%25' y='58%25' font-size='34' text-anchor='middle' fill='white' font-family='Segoe UI,Arial,sans-serif'%3EBRS%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{ --bg:#0b1020; --card:#0f172a; --text:#e5e7eb; --muted:#94a3b8; --brand:#4f46e5; --brand2:#22d3ee }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:
+      radial-gradient(1200px 800px at 10% -10%, rgba(79,70,229,.25), transparent 50%),
+      radial-gradient(1000px 700px at 110% 0%, rgba(34,211,238,.22), transparent 50%),
+      linear-gradient(180deg,#0b1020 0%, #0b1020 100%);}
+    .wrap{max-width:880px;margin:0 auto;padding:24px}
+    .card{background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.18);backdrop-filter:saturate(140%) blur(10px);border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+    .logo{width:56px;height:56px;border-radius:12px;background:conic-gradient(from 230deg at 50% 50%, var(--brand), var(--brand2), var(--brand));display:grid;place-items:center;color:#fff;font-weight:800;letter-spacing:.5px}
+    .title{font-size:22px;margin:0}
+    .sub{margin:2px 0 0;color:var(--muted);font-size:14px}
+    .cta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 8px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.2);color:white;text-decoration:none;font-weight:600;transition:.2s ease;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.0));}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.35)}
+    .btn.whatsapp{background:linear-gradient(180deg, rgba(22,163,74,.28), rgba(22,163,74,.08)); border-color:rgba(34,197,94,.35)}
+    .btn.call{background:linear-gradient(180deg, rgba(79,70,229,.26), rgba(79,70,229,.08))}
+    .btn.map{background:linear-gradient(180deg, rgba(245,158,11,.26), rgba(245,158,11,.08))}
+    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
+    .svc{padding:14px;border-radius:14px;border:1px solid rgba(148,163,184,.18);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));text-align:center;color:var(--text);font-weight:600;font-size:14px}
+    .svc span{display:block;font-size:22px;margin-bottom:6px}
+    .row{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin-top:12px}
+    @media (max-width:820px){.row{grid-template-columns:1fr}}
+    .section-title{font-weight:700;margin:10px 0 8px;font-size:16px;color:#cbd5e1}
+    .muted{color:var(--muted)}
+    .addr{display:flex;justify-content:space-between;gap:10px;align-items:center}
+    .chip{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:12px;border:1px dashed rgba(148,163,184,.35);color:#cbd5e1;font-size:13px}
+    .tiny{font-size:12px;color:var(--muted)}
+    footer{margin:16px 0 8px;text-align:center;color:var(--muted);font-size:12px}
+    .toggle{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid rgba(148,163,184,.25);cursor:pointer}
+    .hidden{display:none}
+    code.inline{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0b1227;border:1px solid rgba(148,163,184,.18);padding:2px 6px;border-radius:6px}
+    input, select, textarea{width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(148,163,184,.25); background:rgba(255,255,255,.02); color:var(--text); outline:none; font-size:14px}
+    label{display:block; font-size:13px; color:#cbd5e1; margin:6px 0 6px}
+    form .row2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    @media (max-width:520px){ form .row2{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="logo">BRS</div>
+        <div>
+          <h1 class="title">BRS Net Center</h1>
+          <p class="sub">Fast help for online applications — PAN, Passport, Jobs, Exams & more</p>
+        </div>
+        <label class="toggle" title="Toggle compact mode">
+          <input id="compactToggle" type="checkbox" />
+          <span>Compact</span>
+        </label>
+      </header>
+
+      <div class="cta">
+        <a class="btn whatsapp" id="walink" href="#" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+        <a class="btn call" id="callBtn" href="#">📞 Call now</a>
+        <a class="btn map" id="mapBtn" href="#" target="_blank" rel="noopener">📍 Get directions</a>
+      </div>
+
+      <div class="section-title">Popular Services</div>
+      <div class="grid">
+        <div class="svc"><span>🪪</span>PAN Card</div>
+        <div class="svc"><span>🛂</span>Passport</div>
+        <div class="svc"><span>📝</span>Job Applications</div>
+        <div class="svc"><span>🎓</span>Exam Forms</div>
+        <div class="svc"><span>🧾</span>Utility Bills</div>
+        <div class="svc"><span>🖨️</span>Scans & Prints</div>
+      </div>
+
+      <div class="row">
+        <div class="card">
+          <div class="section-title">Address</div>
+          <div class="addr">
+            <span id="addrText"> {{Your shop address here}} </span>
+            <button class="btn" id="copyAddr" type="button">📋 Copy</button>
+          </div>
+          <div class="tiny">Tip: share this link so customers can reach you faster.</div>
+
+          <div class="section-title" style="margin-top:12px;">Request a Callback</div>
+          <form id="leadForm">
+            <label>Full Name
+              <input name="name" required placeholder="Your name" />
+            </label>
+            <div class="row2">
+              <label>Phone (WhatsApp)
+                <input name="phone" required inputmode="numeric" pattern="[0-9+\s-]{10,15}" placeholder="91XXXXXXXXXX" />
+              </label>
+              <label>Service
+                <select name="service">
+                  <option value="">Select a service</option>
+                  <option>PAN Card</option>
+                  <option>Passport</option>
+                  <option>Job Applications</option>
+                  <option>Exam Forms</option>
+                  <option>Utility Bills</option>
+                  <option>Scans & Prints</option>
+                </select>
+              </label>
+            </div>
+            <label>Message (optional)
+              <textarea name="message" rows="3" placeholder="Tell us what you need…"></textarea>
+            </label>
+            <button class="btn" type="submit">🚀 Send request</button>
+            <span id="leadStatus" class="tiny" style="margin-left:8px;"></span>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Quick Links</div>
+          <div class="chip">✅ Fast form filling</div>
+          <div class="chip">🧾 E‑payments supported</div>
+          <div class="chip">🔐 Secure & private</div>
+          <div class="chip">🌐 Free Wi‑Fi waiting</div>
+          <div class="section-title" style="margin-top:12px;">Share</div>
+          <div class="tiny">Share this page with customers on WhatsApp or print a QR.</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>© <span id="yr"></span> BRS Net Center · Built with 💙</footer>
+  </div>
+
+  <script>
+    // ======= CONFIG — EDIT THESE VALUES =======
+    const PHONE = "91XXXXXXXXXX"; // digits only, no +
+    const PREFILL = "Hi BRS Net Center, I need help with an application.";
+    const MAPS_URL = "https://maps.google.com/?q={{Your+shop+address+encoded}}";
+    const API_BASE = "https://<your-api-host>.onrender.com"; // set your deployed API URL
+    // ==========================================
+
+    const PAGE_URL = location.href.split('#')[0];
+
+    // WhatsApp deep link
+    const walink = document.getElementById('walink');
+    const encodedMsg = encodeURIComponent(PREFILL);
+    walink.href = `https://wa.me/${PHONE}?text=${encodedMsg}`;
+
+    // Call link
+    const callBtn = document.getElementById('callBtn');
+    callBtn.href = `tel:+${PHONE}`;
+
+    // Maps link
+    document.getElementById('mapBtn').href = MAPS_URL;
+
+    // Copy address
+    document.getElementById('copyAddr').addEventListener('click', async () => {
+      const text = document.getElementById('addrText').innerText.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+        const btn = document.getElementById('copyAddr');
+        const old = btn.textContent;
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = old, 1200);
+      } catch(e){
+        alert('Copy failed. Long-press to select and copy.');
+      }
+    });
+
+    // Compact mode toggle
+    const ct = document.getElementById('compactToggle');
+    ct.addEventListener('change', () => {
+      document.querySelectorAll('.card').forEach(c => c.style.padding = ct.checked ? '14px' : '22px');
+      document.documentElement.style.setProperty('--text', ct.checked ? '#e2e8f0' : '#e5e7eb');
+    });
+
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // ===== Analytics & Lead API =====
+    async function track(type){
+      try{
+        await fetch(`${API_BASE}/api/analytics/click`, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ type, page_url: PAGE_URL })
+        });
+      }catch(e){ /* ignore */ }
+    }
+
+    document.getElementById('walink')?.addEventListener('click', ()=>track('whatsapp'));
+    document.getElementById('callBtn')?.addEventListener('click', ()=>track('call'));
+    document.getElementById('mapBtn')?.addEventListener('click', ()=>track('map'));
+    document.getElementById('copyAddr')?.addEventListener('click', ()=>track('copy_address'));
+
+    const leadForm = document.getElementById('leadForm');
+    if(leadForm){
+      leadForm.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const status = document.getElementById('leadStatus');
+        status.textContent = 'Sending…';
+        const data = Object.fromEntries(new FormData(leadForm).entries());
+        data.page_url = PAGE_URL;
+        try{
+          const res = await fetch(`${API_BASE}/api/inquiry`, {
+            method:'POST', headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(data)
+          });
+          const j = await res.json();
+          if(j.ok){
+            status.textContent = '✅ We will call you shortly.';
+            leadForm.reset();
+            track('form_submit');
+          } else {
+            status.textContent = '⚠️ ' + (j.error || 'Failed');
+          }
+        }catch(err){
+          status.textContent = '❌ Network error. Please try WhatsApp/call.';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

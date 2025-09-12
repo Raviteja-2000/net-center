@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "BRS Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ping",
+      "request": {
+        "method": "GET",
+        "url": "{{base}}/api/ping"
+      }
+    },
+    {
+      "name": "Create Inquiry",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Test User\", \"phone\": \"919999999999\", \"service\": \"PAN\", \"message\": \"Help\"}"
+        },
+        "url": "{{base}}/api/inquiry"
+      }
+    },
+    {
+      "name": "Track Click",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\": \"whatsapp\", \"page_url\": \"http://localhost\"}"
+        },
+        "url": "{{base}}/api/analytics/click"
+      }
+    },
+    {
+      "name": "List Inquiries (admin)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": "{{base}}/api/inquiries"
+      }
+    },
+    {
+      "name": "Export CSV (admin)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": "{{base}}/api/export.csv"
+      }
+    },
+    {
+      "name": "Analytics Summary (admin)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": "{{base}}/api/analytics/summary"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "api_key",
+      "value": "YOUR_API_KEY"
+    }
+  ]
+}

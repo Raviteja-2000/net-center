@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: brs-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: ALLOWED_ORIGIN
+        value: https://<your-username>.github.io/<repo-name>
+      - key: API_KEY
+        generateValue: true
+      - key: DB_PATH
+        value: /var/data/data.db
+    disk:
+      name: brs-data
+      mountPath: /var/data
+      sizeGB: 1
